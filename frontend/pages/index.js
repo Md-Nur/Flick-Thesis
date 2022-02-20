@@ -1,8 +1,20 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import { useState } from "react";
 
 export default function Home() {
+  const handelVisible = () => {
+    if (visble == 'hidden') {
+      setVisible('block');
+         }
+    else{
+      setVisible('hidden');
+    }
+  }
+
+
+  const [visble,setVisible] = useState('hidden');
   return (
     <div className="{styles.container}">
       <Head>
@@ -12,113 +24,46 @@ export default function Home() {
       </Head>
 
       <nav className="nav bg-sky-500 text-white text-center">
-        <button id="dropdownButton" data-dropdown-toggle="dropdown"> Load </button>
-      
-        <ul id="dropdown" className="justify-between px-2 block md:flex hidden">
-          <li className="cursor-pointer hover:bg-sky-700 px-1 py-3">
+        <div className="navbar flex justify-between items-center p-4 md:hidden">
+          <div clasName="flex justify-center items-center">
+            <div type="button" className="hamburger inline-block p-4 cursor-pointer" onClick={handelVisible}>
+              <div className="line h-0.5 w-6 my-1 bg-white"></div>
+              <div className="line h-0.5 w-6 my-1 bg-white"></div>
+              <div className="line h-0.5 w-6 my-1 bg-white"></div>
+            </div>
+          </div>
+        <div className="text-center md:hidden">Movie Blog</div>
+        {/* <div className="Cart text-center md:hidden">Cart Account</div> */}
+        <div className="search md:hidden">Search</div>
+        </div>
+
+        <ul className={`justify-between px-20 md:flex ${visble}`}>
+          <li className="cursor-pointer text-xs font-bold hover:bg-sky-700 px-1 py-3">
             MOVIE BLOG
           </li>
-          <li className="cursor-pointer hover:bg-sky-700 px-1 py-3">
+          <li className="cursor-pointer text-xs font-bold hover:bg-sky-700 px-1 py-3">
             SR EXCLUSIVES
           </li>
-          <li className="cursor-pointer hover:bg-sky-700 px-1 py-3">
+          <li className="cursor-pointer text-xs font-bold hover:bg-sky-700 px-1 py-3">
             MOVIE NEWS
           </li>
-          <li className="cursor-pointer hover:bg-sky-700 px-1 py-3">TV NEWS</li>
-          <li className="cursor-pointer hover:bg-sky-700 px-1 py-3">REVIEWS</li>
-          <li className="cursor-pointer hover:bg-sky-700 px-1 py-3">
+          <li className="cursor-pointer text-xs font-bold hover:bg-sky-700 px-1 py-3">TV NEWS</li>
+          <li className="cursor-pointer text-xs font-bold hover:bg-sky-700 px-1 py-3">REVIEWS</li>
+          <li className="cursor-pointer text-xs font-bold hover:bg-sky-700 px-1 py-3">
             INTERVIEWS
           </li>
-          <li className="cursor-pointer hover:bg-sky-700 px-1 py-3">TECH</li>
-          <li className="cursor-pointer hover:bg-sky-700 px-1 py-3">MORE</li>
-          <li className="cursor-pointer hover:bg-sky-700 px-1 py-3">
+          <li className="cursor-pointer text-xs font-bold hover:bg-sky-700 px-1 py-3">TECH</li>
+          <li className="cursor-pointer text-xs font-bold hover:bg-sky-700 px-1 py-3">MORE</li>
+          <li className="cursor-pointer text-xs font-bold hover:bg-sky-700 px-1 py-3">
             FOLLOW US
           </li>
-          <li className="cursor-pointer hover:bg-sky-700 px-1 py-3">
+          <li className="cursor-pointer text-xs font-bold hover:bg-sky-700 px-1 py-3">
             DARK MODE
           </li>
-          <li className="cursor-pointer hover:bg-sky-700 px-1 py-3">SEARCH</li>
+          <li className="cursor-pointer text-xs font-bold hover:bg-sky-700 px-1 py-3">SEARCH</li>
         </ul>
       </nav>
 
-       
-      <main className={styles.main}>
-        <h1 className={styles.title}>THE #1 MOVIE & TV NEWS WEBSITE</h1>
-
-        <div className="mt-8 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-          <div className="md:flex">
-            <div className="md:shrink-0">
-              <img
-                className="h-48 w-full object-cover md:h-full md:w-48"
-                src="https://source.unsplash.com/collection/1346951/1000x500?sig=1"
-              />
-            </div>
-            <div className="p-8">
-              <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
-                Case study
-              </div>
-              <a
-                href="#"
-                className="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
-              >
-                Finding customers for your new business
-              </a>
-              <p className="mt-2 text-slate-500">
-                Getting a new business off the ground is a lot of hard work.
-                Here are five ideas you can use to find your first customers.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+</div>
   );
 }
