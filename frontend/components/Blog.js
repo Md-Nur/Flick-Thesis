@@ -11,10 +11,10 @@ function Blog() {
             Latest
           </h2>
           <div className="singleBlog shadow hover:shadow-md sm:rounded md:rounded-md">
-            <div className="card sm:grid sm:grid-cols-2 sm:gap-3 sm:content-center">
+            <div className="card md:grid md:grid-cols-2 md:gap-3 md:content-center">
               <div className="imgCard">
                 <Image
-                  className="w-full h-64" height="16 rem" width="100 %"
+                  className="" height={2} width={3} layout="responsive"
                   src="https://source.unsplash.com/collection/1346951/500x500?sig=1"
                 />
               </div>
@@ -38,11 +38,11 @@ function Blog() {
           <h2 className="text-xl py-4 text-yellow-600 font-bold underline md:text-2xl">
             Trending
           </h2>
-          <div className="tredingItem sm:flex sm:justify-between sm:items-center md:block">
+          <div className="tredingItem md:block">
             <div className="singleBlog py-4">
               <div className="imgCard">
-                <Image
-                  className="w-full sm:64 md:w-full h-64"
+                <Image 
+                  className="" height={2} width={3} layout="responsive"
                   src="https://source.unsplash.com/collection/1346951/500x500?sig=1"
                 />
                 <p className="text-yellow-600">Type</p>
@@ -55,7 +55,7 @@ function Blog() {
             <div className="singleBlog">
               <div className="imgCard">
                 <Image
-                  className="w-full sm:w-64 md:w-full h-64"
+                  className="" height={2} width={3} layout="responsive"
                   src="https://source.unsplash.com/collection/1346951/500x500?sig=1"
                 />
                 <p className="text-yellow-600">Type</p>
