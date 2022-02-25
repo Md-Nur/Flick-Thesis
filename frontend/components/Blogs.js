@@ -2,15 +2,15 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-function Blog() {
+function Blogs() {
   return (
-    <div>
-      <div className="blogContainer md:grid md:grid-cols-3 md:gap-4">
+    <main className="px-1 sm:px-9 md:px-12">
+      <div className="blogContainer md:grid md:grid-cols-3 md:gap-10">
         <div className="md:col-span-2">
           <h2 className="text-xl text-yellow-600 py-4 font-bold underline md:text-2xl">
             Latest
           </h2>
-          <div className="singleBlog shadow hover:shadow-md sm:rounded md:rounded-md">
+          <div className="singleBlog bg-white shadow hover:shadow-md sm:rounded md:rounded-md">
             <div className="card md:grid md:grid-cols-2 md:gap-3 md:content-center">
               <div className="imgCard">
                 <Image
@@ -19,10 +19,10 @@ function Blog() {
                 />
               </div>
               <div className="textCard content-center grid">
-                <p className="text-yellow-600">Type</p>
                 <Link href="" className="text-2xl font-bold hover:underline">
                   Title
                 </Link>
+                <p className="text-yellow-600">Type</p>
                 <p className="text-slate-600">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Aspernatur officiis ad consequuntur a hic molestiae voluptatem
@@ -39,7 +39,7 @@ function Blog() {
             Trending
           </h2>
           <div className="tredingItem md:block">
-            <div className="singleBlog py-4">
+            <div className="singleBlog bg-white sm:rounded md:rounded-md pb-6">
               <div className="imgCard">
                 <Image 
                   className="" height={2} width={3} layout="responsive"
@@ -53,7 +53,7 @@ function Blog() {
               </div>
             </div>
             <div className="singleBlog">
-              <div className="imgCard">
+              <div className="imgCard bg-white">
                 <Image
                   className="" height={2} width={3} layout="responsive"
                   src="https://source.unsplash.com/collection/1346951/500x500?sig=1"
@@ -68,8 +68,8 @@ function Blog() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 
-export default Blog;
+export default Blogs;
